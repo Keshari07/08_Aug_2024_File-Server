@@ -1,0 +1,90 @@
+  sudo adduser sambauser
+   52  sudo smbpasswd -a sambauser06
+   53  nano /etc/samba/smb.conf
+   54  sudo mkdir -p /srv/samba/secured
+   55  sudo chown sambauser:sambauser /srv/samba/secured
+   56  sudo chmod 0770 /srv/samba/secured
+   57  sudo systemctl restart smbd
+   58  sudo systemctl restart nmbd
+   
+   
+     sudo adduser sambauser
+   52  sudo smbpasswd -a sambakali07
+   53  nano /etc/samba/smb.conf
+   54  sudo mkdir -p /srv/samba/arunchaalShare
+   55  sudo chown sambakali07:sambakali07 /srv/samba/arunchaalShare
+   56  sudo chmod 0770 /srv/samba/arunchaalShare
+   57  sudo systemctl restart smbd
+   58  sudo systemctl restart nmbd
+   
+===========================================================================================================================================
+                                          <<<  Install Samba client >>
+
+On the client machine:
+
+Install Samba client:
+bash
+Copy code
+sudo apt update
+sudo apt install samba-client cifs-utils
+Create a mount point and mount the shared folder:
+bash
+Copy code
+sudo mkdir -p /mnt/samba/sharedfiles
+sudo mount -t cifs //192.168.1.10/SharedFiles /mnt/samba/sharedfiles -o guest
+Replace 192.168.1.10 with the server's IP address.
+Access the shared files:
+bash
+Copy code
+cd /mnt/samba/sharedfiles
+ls
+With these steps, you should be able to share files between machines using Samba on Ubuntu 22.04.   
+   
+   
+   
+   
+   
+ <! --------------------------------------------------------------------------------
+ 
+ 
+ cdac  192.168.80.30
+ 
+   deb http://apt.postgresql.org/pub/repos/apt/ kali-rolling-pgdg main
+   
+   
+#deb http://apt.postgresql.org/pub/repos/apt/ kali-rolling-pgdg main
+sudo cp /etc/apt/sources.list.d/pgdg.list /etc/apt/sources.list.d/pgdg.list.bak
+
+
+sudo mkdir -p /mnt/srv/samba/secured
+sudo mount -t cifs //192.168..10/SharedFiles /mnt/samba/sharedfiles -o guest
+
+---------------------------------------------------------------------------> 
+
+
+
+error on samba 
+
+"root@sanjay016:~# sudo mkdir -p /mnt/samba/sharedfiles
+sudo mount -t cifs //192.168.80.30/SharedFiles /mnt/samba/sharedfiles -o guest
+mount error(111): could not connect to 192.168.80.30Unable to find suitable address."
+
+
+Solucation of error on samba
+   username=sambauser,password=9095
+root@Suyavanshi:/# sudo mount -t cifs //192.168.80.11/secured /srv/samba/secured -o username=sambauser,password=9095
+
+
+
+
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+import pyfiglet
+
+# Text to be converted to ASCII art
+text = "Keshribhan Suryavanshi"
+
+# Create ASCII art from the text
+ascii_art = pyfiglet.figlet_format(text)
+
+# Print the ASCII art
+print(ascii_art)
+
+
+
+
+
+
+
+username=sambakali07,password=12345
+root@Suyavanshi:/# sudo mount -t cifs //192.168.80.11/SharedFiles /mnt/samba/sharedfiles -o username=sambakali07,password=12345
+
+
+
+
+ [secured]
+   path = /srv/samba/secured
+   browseable = yes
+   read only = no
+   valid users = sambauser
+   
+   username=sambauser,password=9095
+root@Suyavanshi:/# sudo mount -t cifs //192.168.80.11/secured /srv/samba/secured -o username=sambauser,password=9095
+
+
+
+
+import pyfiglet
+
+# Text to be converted to ASCII art
+text = "Advanced Computing Training School Panchawati, Pashan, Pune, Maharashtra 411008"
+
+# Create ASCII art from the text
+ascii_art = pyfiglet.figlet_format(text)
+
+# Print the ASCII art
+print(ascii_art)
